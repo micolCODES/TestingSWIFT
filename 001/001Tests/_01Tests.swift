@@ -6,7 +6,10 @@
 //
 
 import XCTest
+//XCTest is a framework used to test
+
 @testable import _01
+//I'm importing the 001 module, the first app I am using to test. The @testable attribute gives the tests the access to the rest of a the app's code
 
 final class _01Tests: XCTestCase {
 
@@ -33,4 +36,25 @@ final class _01Tests: XCTestCase {
         }
     }
 
+    func testHaterStartsNicely() {
+        let hater = Hater()
+        
+        XCTAssertFalse(hater.hating, "Haters should not be hating")
+    }
+    
+    func testHaterHatesAfterBadDay() {
+        var hater = Hater()
+        
+        hater.hadABadDay()
+        
+        XCTAssertTrue(hater.hating, "Haters should be hating")
+    }
+    
+    func testHaterHappyAfterGoodDay() {
+        var hater = Hater()
+        
+        hater.hadAGoodDay()
+        
+        XCTAssertFalse(hater.hating, "Haters should NOT be hating")
+    }
 }
