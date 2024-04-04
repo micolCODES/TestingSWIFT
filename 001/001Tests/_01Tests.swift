@@ -43,10 +43,15 @@ final class _01Tests: XCTestCase {
     }
     
     func testHaterHatesAfterBadDay() {
+        // EXAMPLE OF
+        
+        // 1. Given:
         var hater = Hater()
         
+        // 2. When...
         hater.hadABadDay()
         
+        // 3. Then...
         XCTAssertTrue(hater.hating, "Haters should be hating")
     }
     
